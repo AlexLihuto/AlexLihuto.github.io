@@ -73,6 +73,11 @@ h3{margin:0;font-size:21px;font-weight:700;letter-spacing:-.01em}
 .step{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid var(--line3)}
 .step .n{font-size:13px;color:var(--dim)}
 .step h3{font-size:19px}
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px}
+.term{padding:28px;border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:16px;background:var(--card);display:flex;flex-direction:column;gap:12px}
+.term svg{color:var(--accent)}
+.term h3{font-size:19px}
+.term p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
 .contact{border-radius:24px;background:var(--accent);color:var(--bg);padding:56px 48px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px}
 .contact h2{font-size:52px;line-height:1.05;letter-spacing:-.035em}
 .contact p{margin:14px 0 0;font-size:18px;line-height:1.6;color:#1B3A2A;max-width:520px}
@@ -182,6 +187,34 @@ section.block{padding-bottom:64px}
   </div>
 </section>
 
+<section class="block wrap">
+  <div class="tag mono">// <span data-i18n="termsTag">условия</span></div>
+  <h2 data-i18n="termsTitle">Честные условия</h2>
+  <p class="sub" data-i18n="termsLead">Точную стоимость называю после разбора задачи — без скрытых доплат и сюрпризов.</p>
+  <div class="terms">
+    <div class="term">
+      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <h3 data-i18n="t1t">Цена не меняется</h3>
+      <p data-i18n="t1p">Называю цену после оценки задачи — и дальше она зафиксирована.</p>
+    </div>
+    <div class="term">
+      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M12 12h9"/></svg>
+      <h3 data-i18n="t2t">Оплата 50/50</h3>
+      <p data-i18n="t2p">Половина — на старте, половина — после сдачи работы.</p>
+    </div>
+    <div class="term">
+      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+      <h3 data-i18n="t3t">14 дней правок</h3>
+      <p data-i18n="t3p">После запуска бесплатно исправляю ошибки и дорабатываю мелочи.</p>
+    </div>
+    <div class="term">
+      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.6 7.6a5.5 5.5 0 1 1-7.8 7.8 5.5 5.5 0 0 1 7.8-7.8zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+      <h3 data-i18n="t4t">Код и доступы — ваши</h3>
+      <p data-i18n="t4p">Передаю исходники, доступы к хостингу и сервисам. Никакой привязки ко мне.</p>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="block wrap" style="padding-bottom:80px">
   <div class="contact">
     <div class="contact-left">
@@ -225,6 +258,11 @@ section.block{padding-bottom:64px}
     p2t:'Estimate & plan',p2p:'I give you a timeline and price, and we lock the scope.',
     p3t:'Build',p3p:'I build it and share progress along the way.',
     p4t:'Launch',p4p:'I deploy, hand over access and stay available for support.',
+    termsTag:'terms',termsTitle:'Fair terms',termsLead:'I give you the exact price after reviewing the task — no hidden fees, no surprises.',
+    t1t:'Fixed price',t1p:'I quote after estimating the task — and the price stays fixed.',
+    t2t:'50/50 payment',t2p:'Half upfront, half after delivery.',
+    t3t:'14 days of fixes',t3p:'After launch I fix bugs and polish small details for free.',
+    t4t:'You own the code',t4p:'You get the source code and access to hosting and services. No lock-in.',
     contactTitle:'Have a project? Let’s talk.',contactLead:'Describe your idea in a couple of sentences — I’ll reply with a solution.'
   };
   var ru={};
