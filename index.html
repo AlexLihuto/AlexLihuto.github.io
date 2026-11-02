@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>alex_lihuto — веб-разработка, боты, автоматизация</title>
+<meta name="description" content="PHP backend-разработчик. Веб-приложения, API, Telegram-боты, автоматизация, лендинги и DevOps под ключ.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="alex_lihuto — веб-разработка под ключ">
+<meta property="og:description" content="Веб-приложения, API, Telegram-боты, автоматизация, лендинги и DevOps.">
+<meta property="og:url" content="https://alexlihuto.github.io/">
+<meta property="og:image" content="https://alexlihuto.github.io/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0C10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237CFFB2'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' text-anchor='middle' fill='%230A0C10'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0C10;--card:#0E1117;--card2:#12161D;--line:#1A212B;--line2:#222A35;--line3:#2E3A48;--fg:#E8ECF1;--muted:#A7B0BC;--dim:#8A94A3;--accent:#7CFFB2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.wrap{max-width:1200px;margin:0 auto;padding-left:40px;padding-right:40px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:28px;padding-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:10px;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500}
+.lang{display:flex;padding:4px;border:1px solid var(--line2);border-radius:999px;gap:4px}
+.lang button{min-width:48px;min-height:36px;padding:0 14px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:500 13px 'JetBrains Mono',monospace;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.hero{position:relative;padding-top:72px;padding-bottom:96px}
+.ring{position:absolute;border-radius:50%;border:1px solid var(--line);pointer-events:none}
+.hero-row{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:56px}
+.hero-text{display:flex;flex-direction:column;gap:28px;flex:1 1 520px;min-width:0}
+.badge{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line2);border-radius:999px;font-size:13px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(124,255,178,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(124,255,178,0)}100%{box-shadow:0 0 0 0 rgba(124,255,178,0)}}
+h1{margin:0;font-size:64px;line-height:1.04;font-weight:800;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{margin:0;font-size:20px;line-height:1.6;color:var(--muted);max-width:680px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:12px;font-weight:700;font-size:16px;transition:.2s}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-primary:hover{background:#A8FFCC}
+.btn-ghost{border:1px solid var(--line3);color:var(--fg);font-weight:600}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.photo{flex:0 1 400px;min-width:260px;margin:0 auto;position:relative}
+.photo .outline{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--accent);border-radius:28px}
+.photo .frame{position:relative;border-radius:28px;overflow:hidden;background:var(--card2);aspect-ratio:4/5}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.plate{position:absolute;left:16px;right:16px;bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:16px;background:rgba(10,12,16,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.plate b{display:block;font-size:16px}
+.plate span.mono{font-size:12px;color:var(--muted)}
+.facts{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;margin-top:72px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.facts div{background:var(--bg);padding:28px}
+.facts b{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.facts span{font-size:14px;color:var(--dim)}
+section.block{padding-top:48px;padding-bottom:96px}
+.tag{font-size:13px;color:var(--accent);margin-bottom:12px}
+h2{margin:0;font-size:44px;font-weight:800;letter-spacing:-.03em}
+.sub{margin:12px 0 0;font-size:18px;color:var(--muted);max-width:640px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px}
+.card{padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--card);display:flex;flex-direction:column;gap:14px;transition:border-color .2s,background .2s,transform .2s}
+.card:hover{border-color:var(--line3);background:var(--card2);transform:translateY(-2px)}
+.card .n{font-size:13px;color:var(--accent)}
+h3{margin:0;font-size:21px;font-weight:700;letter-spacing:-.01em}
+.card p,.step p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.chips span{padding:10px 16px;border:1px solid var(--line2);border-radius:10px;font-size:14px;color:#D3D9E1}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px}
+.step{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid var(--line3)}
+.step .n{font-size:13px;color:var(--dim)}
+.step h3{font-size:19px}
+.contact{border-radius:24px;background:var(--accent);color:var(--bg);padding:56px 48px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px}
+.contact h2{font-size:52px;line-height:1.05;letter-spacing:-.035em}
+.contact p{margin:14px 0 0;font-size:18px;line-height:1.6;color:#1B3A2A;max-width:520px}
+.contact-left{flex:1 1 420px}
+.contact-links{display:flex;flex-direction:column;gap:12px;flex:0 1 340px;width:100%}
+.clink{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:10px 22px;border-radius:14px;background:var(--bg);color:var(--fg);transition:transform .2s}
+.clink:hover{transform:translateY(-2px)}
+.clink small{display:block;font-size:12px;color:var(--dim)}
+.clink b{font-size:16px;word-break:break-all}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;padding-bottom:48px;font-size:14px;color:var(--dim)}
+@media (max-width:720px){
+.wrap{padding-left:20px;padding-right:20px}
+.hero{padding-top:32px;padding-bottom:64px}
+h1{font-size:42px}
+.lead{font-size:18px}
+h2{font-size:34px}
+.contact{padding:36px 24px}
+.contact h2{font-size:34px}
+.facts{margin-top:56px}
+section.block{padding-bottom:64px}
+.btn{width:100%;justify-content:center}
+.photo .outline{inset:12px -10px -12px 10px}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="brand">
+    <div class="logo mono">&lt;A/&gt;</div>
+    <div class="mono" style="font-weight:500;font-size:16px">alex_lihuto</div>
+  </div>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap">
+  <div class="ring" aria-hidden="true" style="top:20px;right:-120px;width:520px;height:520px"></div>
+  <div class="ring" aria-hidden="true" style="top:120px;right:-20px;width:320px;height:320px"></div>
+  <div class="hero-row">
+    <div class="hero-text">
+      <div class="badge mono"><span class="dot"></span><span data-i18n="badge">Открыт для новых проектов</span></div>
+      <h1><span data-i18n="h1a">Делаю веб-продукты,</span> <em data-i18n="h1b">которые работают.</em></h1>
+      <p class="lead" data-i18n="lead">Backend-разработчик на PHP. Берусь за все виды веб-услуг: от лендинга за пару дней до сложного веб-приложения, ботов и автоматизации бизнес-процессов.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://t.me/alex_lihuto" target="_blank" rel="noopener">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          <span data-i18n="ctaTg">Написать в Telegram</span>
+        </a>
+        <a class="btn btn-ghost" href="mailto:alex.lihuto@gmail.com">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span data-i18n="ctaMail">Отправить email</span>
+        </a>
+      </div>
+    </div>
+    <div class="photo">
+      <div class="outline" aria-hidden="true"></div>
+      <div class="frame">
+        <img src="photo.jpg" alt="Александр" data-i18n-alt="photoAlt" width="800" height="1000">
+        <div class="plate">
+          <span><b data-i18n="name">Александр</b><span class="mono">PHP · Backend · DevOps</span></span>
+          <span class="dot" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="facts">
+    <div><b>PHP</b><span>Symfony · Laravel · Yii2</span></div>
+    <div><b>Full cycle</b><span data-i18n="f2">от идеи до деплоя</span></div>
+    <div><b>DevOps</b><span>Docker · CI/CD · Helm</span></div>
+  </div>
+</section>
+
+<section class="block wrap">
+  <div class="tag mono">// <span data-i18n="servicesTag">услуги</span></div>
+  <h2 data-i18n="servicesTitle">Чем могу помочь</h2>
+  <p class="sub" data-i18n="servicesLead">Все виды веб-услуг под ключ — оценю задачу, предложу решение и доведу до запуска.</p>
+  <div class="grid">
+    <div class="card"><div class="n mono">01</div><h3 data-i18n="s1t">Веб-приложения</h3><p data-i18n="s1p">Личные кабинеты, админ-панели, CRM, сервисы с ролями, платежами и интеграциями.</p></div>
+    <div class="card"><div class="n mono">02</div><h3 data-i18n="s2t">Backend и API</h3><p data-i18n="s2p">REST API, микросервисы, интеграции со сторонними сервисами, оптимизация и рефакторинг.</p></div>
+    <div class="card"><div class="n mono">03</div><h3 data-i18n="s3t">Telegram-боты</h3><p data-i18n="s3p">Боты для бизнеса, записи, продаж, уведомлений и внутренних процессов команды.</p></div>
+    <div class="card"><div class="n mono">04</div><h3 data-i18n="s4t">Автоматизация</h3><p data-i18n="s4p">Парсеры, cron-задачи, выгрузки, отчёты — убираю рутину, которую сейчас делают руками.</p></div>
+    <div class="card"><div class="n mono">05</div><h3 data-i18n="s5t">Лендинги и сайты</h3><p data-i18n="s5p">Одностраничники, сайты-визитки и промо-страницы — быстро, адаптивно, с формой заявки.</p></div>
+    <div class="card"><div class="n mono">06</div><h3 data-i18n="s6t">DevOps и поддержка</h3><p data-i18n="s6p">Docker, CI/CD, деплой, настройка серверов, мониторинг и сопровождение проекта.</p></div>
+  </div>
+</section>
+
+<section class="block wrap">
+  <div class="tag mono">// <span data-i18n="stackTag">стек</span></div>
+  <h2 data-i18n="stackTitle">Инструменты</h2>
+  <div class="chips mono">
+    <span>PHP 8</span><span>Symfony</span><span>Laravel</span><span>Yii2</span><span>MySQL</span><span>PostgreSQL</span><span>Redis</span><span>ClickHouse</span><span>Docker</span><span>GitLab CI</span><span>Helm</span><span>Prometheus</span><span>Telegram Bot API</span><span>JavaScript</span>
+  </div>
+</section>
+
+<section class="block wrap">
+  <div class="tag mono">// <span data-i18n="processTag">как работаем</span></div>
+  <h2 data-i18n="processTitle">Простой процесс</h2>
+  <div class="steps">
+    <div class="step"><div class="n mono">01</div><h3 data-i18n="p1t">Обсуждаем задачу</h3><p data-i18n="p1p">Пишете в Telegram или на почту — разбираемся, что нужно и зачем.</p></div>
+    <div class="step"><div class="n mono">02</div><h3 data-i18n="p2t">Оценка и план</h3><p data-i18n="p2p">Называю сроки и стоимость, фиксируем объём работ.</p></div>
+    <div class="step"><div class="n mono">03</div><h3 data-i18n="p3t">Разработка</h3><p data-i18n="p3p">Делаю и показываю промежуточные результаты по ходу.</p></div>
+    <div class="step"><div class="n mono">04</div><h3 data-i18n="p4t">Запуск</h3><p data-i18n="p4p">Деплою, передаю доступы и остаюсь на связи для поддержки.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="block wrap" style="padding-bottom:80px">
+  <div class="contact">
+    <div class="contact-left">
+      <h2 data-i18n="contactTitle">Есть задача? Давайте обсудим.</h2>
+      <p data-i18n="contactLead">Опишите идею в паре предложений — отвечу и предложу решение.</p>
+    </div>
+    <div class="contact-links">
+      <a class="clink" href="https://t.me/alex_lihuto" target="_blank" rel="noopener">
+        <span><small class="mono">Telegram</small><b>@alex_lihuto</b></span>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a class="clink" href="mailto:alex.lihuto@gmail.com">
+        <span><small class="mono">Email</small><b>alex.lihuto@gmail.com</b></span>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 alex_lihuto</span>
+  <span class="mono">php · web · bots · automation</span>
+</footer>
+
+<script>
+(function(){
+  var en={
+    badge:'Available for new projects',h1a:'I build web products',h1b:'that just work.',
+    lead:'PHP backend developer. I handle all kinds of web services — from a landing page in a couple of days to complex web apps, bots and business automation.',
+    ctaTg:'Message on Telegram',ctaMail:'Send an email',name:'Alexander',photoAlt:'Alexander',f2:'from idea to deploy',
+    servicesTag:'services',servicesTitle:'What I can do',servicesLead:'End-to-end web services — I scope the task, propose a solution and ship it.',
+    s1t:'Web applications',s1p:'Dashboards, admin panels, CRMs, services with roles, payments and integrations.',
+    s2t:'Backend & APIs',s2p:'REST APIs, microservices, third-party integrations, optimization and refactoring.',
+    s3t:'Telegram bots',s3p:'Bots for bookings, sales, notifications and internal team workflows.',
+    s4t:'Automation',s4p:'Scrapers, scheduled jobs, exports and reports — removing the manual routine.',
+    s5t:'Landing pages',s5p:'One-pagers, personal sites and promo pages — fast, responsive, with a lead form.',
+    s6t:'DevOps & support',s6p:'Docker, CI/CD, deployment, server setup, monitoring and ongoing maintenance.',
+    stackTag:'stack',stackTitle:'Tools',processTag:'process',processTitle:'How we work',
+    p1t:'We talk',p1p:'Message me on Telegram or email — we figure out what you need and why.',
+    p2t:'Estimate & plan',p2p:'I give you a timeline and price, and we lock the scope.',
+    p3t:'Build',p3p:'I build it and share progress along the way.',
+    p4t:'Launch',p4p:'I deploy, hand over access and stay available for support.',
+    contactTitle:'Have a project? Let’s talk.',contactLead:'Describe your idea in a couple of sentences — I’ll reply with a solution.'
+  };
+  var ru={};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ru[el.dataset.i18n]=el.textContent;});
+  document.querySelectorAll('[data-i18n-alt]').forEach(function(el){ru[el.dataset.i18nAlt]=el.alt;});
+  var titles={ru:document.title,en:'alex_lihuto — web development, bots, automation'};
+  function apply(lang){
+    var d=lang==='en'?en:ru;
+    document.documentElement.lang=lang;
+    document.title=titles[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){if(d[el.dataset.i18n])el.textContent=d[el.dataset.i18n];});
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){if(d[el.dataset.i18nAlt])el.alt=d[el.dataset.i18nAlt];});
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.setLang===lang?'true':'false');});
+    try{localStorage.setItem('lang',lang);}catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.setLang);});});
+  var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
+  var q=new URLSearchParams(location.search).get('lang');
+  var initial=q||saved||((navigator.language||'').toLowerCase().indexOf('ru')===0||(navigator.language||'').toLowerCase().indexOf('be')===0?'ru':'en');
+  if(initial!=='ru')apply(initial);
+})();
+</script>
+</body>
+</html>
